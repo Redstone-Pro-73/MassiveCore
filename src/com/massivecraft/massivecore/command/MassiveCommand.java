@@ -1057,7 +1057,7 @@ public class MassiveCommand implements Active, PluginIdentifiableCommand
 	// TEMPLATE
 	// -------------------------------------------- //
 	
-	public static final Mson TEMPLATE_CORE = Mson.mson("/").color(ChatColor.AQUA);
+	public static final Mson TEMPLATE_CORE = Mson.mson("/").color(ChatColor.RED);
 	
 	public Mson getTemplate(boolean addDesc, boolean onlyFirstAlias, CommandSender sender)
 	{
@@ -1088,7 +1088,7 @@ public class MassiveCommand implements Active, PluginIdentifiableCommand
 			}
 			else
 			{
-				mson = mson.color(ChatColor.AQUA);
+				mson = mson.color(ChatColor.RED);
 			}
 			
 			if ( ! first) ret = ret.add(Mson.SPACE);
@@ -1110,14 +1110,14 @@ public class MassiveCommand implements Active, PluginIdentifiableCommand
 		for (Mson parameter : this.getTemplateParameters(sender))
 		{
 			ret = ret.add(Mson.SPACE);
-			ret = ret.add(parameter.color(ChatColor.DARK_AQUA));
+			ret = ret.add(parameter.color(ChatColor.DARK_GRAY));
 		}
 		
 		// Add desc
 		if (addDesc)
 		{
 			ret = ret.add(Mson.SPACE);
-			ret = ret.add(mson(this.getDesc()).color(ChatColor.YELLOW));
+			ret = ret.add(mson(this.getDesc()).color(ChatColor.GRAY));
 		}
 		
 		// Return Ret
